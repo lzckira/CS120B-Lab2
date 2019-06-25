@@ -13,11 +13,18 @@
 #endif
 
 int main(void) {
-    /* Insert DDR and PORT initializations */
-
-    /* Insert your solution below */
+    DDRA = 0x00;
+    DDRB = 0xFF;
+    PORTA = 0x00;
+    PORTB = 0x00;
     while (1) {
-
+        if(PORTA == 0x03) {
+            PORTB = 0x01;
+        }
+        else {
+            PORTB = 0x00;
+        }
     }
     return 1;
+
 }
