@@ -13,11 +13,12 @@
 #endif
 
 int main(void) {
-    /* Insert DDR and PORT initializations */
-
-    /* Insert your solution below */
-    while (1) {
-
+    DDRA = 0x00; // Configure port A's 8 pins as inputs
+	DDRC = 0xFF; // Configure port B's 8 pins as outputs
+    PORTA = 0x00; // Initialize PORTB output to 0’s
+	PORTC = 0x00; // Initialize PORTB output to 0’s
+	while(1){
+		PORTC = ~PINA; 
     }
-    return 1;
+	return 1;
 }
