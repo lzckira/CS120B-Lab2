@@ -15,10 +15,12 @@
 int main(void) {
     DDRA = 0x00;
     DDRB = 0xFF;
-    PORTA = 0x00;
+    PORTA = 0xFF;
     PORTB = 0x00;
+    unsigned char tmpA = 0x00;
     while (1) {
-	if(PORTA == 0x03) {
+	tmpA = PINA;
+	if(tmpA == 0x01) {
 	    PORTB = 0x01;
 	}
 	else {
